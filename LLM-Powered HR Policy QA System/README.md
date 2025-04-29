@@ -1,6 +1,6 @@
 # HR Policy Question Answering System using RAG (LangChain, Chroma, LLaMA-3.1)
 
-This project implements an intelligent HR policy chatbot using a **Retrieval-Augmented Generation (RAG)** approach. It enables users to ask questions about company HR policies in natural language and get precise, context-aware answers powered by **LLaMA-3.1** and **Chroma**.
+Built an end-to-end RAG-based HR chatbot that answers policy-related queries in natural language. Preprocessed HR documents from CSV using pandas and LangChain’s DataFrameLoader, then chunked them using RecursiveCharacterTextSplitter. Generated embeddings via sentence-transformers/all-MiniLM-L6-v2 and stored them in a Chroma vector database. Used Chroma’s retriever to fetch relevant context and passed it to a quantized LLaMA-3.1 model (via HuggingFace pipeline) for generating precise, context-aware answers. Integrated everything using LangChain’s RetrievalQA for seamless document search and response generation.
 
 ---
 
@@ -50,5 +50,5 @@ The system combines a generative language model with vector-based document retri
 ## 🧪 Example Query
 
 ```python
-query = "What is the Diwali bonus policy at Priya Softweb?"
+query = "What is the Diwali bonus policy at this company?"
 get_answers(QnA, query)
